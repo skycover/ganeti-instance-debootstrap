@@ -1,0 +1,20 @@
+Package: ganeti-instance-debootstrap
+Version: 0.11-1+sci1
+Architecture: all
+Maintainer: Debian Ganeti Team <pkg-ganeti-devel@lists.alioth.debian.org>
+Installed-Size: 288
+Depends: debootstrap, dump, kpartx, initscripts
+Enhances: ganeti
+Breaks: ganeti (<< 1.2.7)
+Section: admin
+Priority: extra
+Homepage: http://code.google.com/p/ganeti/
+Description: debootstrap-based instance OS definition for ganeti
+ Ganeti is a virtual server cluster management software tool built on
+ top of the Xen virtual machine monitor and other Open Source software.
+ After setting it up it will provide you with an automated environment
+ to manage highly available virtual machine instances.
+ .
+ This package provides an OS definition for ganeti that will allow
+ installation of Debian (and possibly Unbuntu) instances via
+ debootstrap.

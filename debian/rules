@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+INSTDIR=$(CURDIR)/debian/ganeti-instance-debootstrap
+
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+build-stamp:
+	dh build
+	touch build-stamp
+
+clean:
+	dh clean
+	rm -f $(CURDIR)/debian/ganeti-instance-debootstrap.default
+
+install: build install-stamp
+install-stamp:
+	cp defaults $(CURDIR)/debian/ganeti-instance-debootstrap.default
+	dh install --until dh_auto_install
+	rm $(INSTDIR)/usr/share/doc/ganeti-instance-debootstrap/COPYING
+	mv $(INSTDIR)/usr/share/ganeti/os/debootstrap/variants.list \
+	  $(INSTDIR)/etc/ganeti/instance-debootstrap/variants.list
+	dh install --after dh_auto_install
+	touch install-stamp
+
+binary-arch: install
+
+binary-indep: install
+	dh binary-indep
+
+binary: binary-arch binary-indep
