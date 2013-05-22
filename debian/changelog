@@ -1,4 +1,4 @@
-ganeti-instance-debootstrap (0.11-1+sci4) unstable; urgency=low
+ganeti-instance-debootstrap (0.11-1+sci4squeeze) unstable; urgency=low
 
   * Set wheezy to default suite, squeeze set as variant
   * add EXTRA_ARGS parameter for debootstrap

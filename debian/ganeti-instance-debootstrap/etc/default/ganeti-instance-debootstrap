@@ -89,11 +89,10 @@ elif [ "$OS_NAME" = "debootstrap" ]; then
   EXTRA_PKGS="linux-image-amd64"
   if [ "$OS_VARIANT" = "squeeze" ]; then
     SUITE=squeeze
+    MIRROR=file:/media/sci/
     EXTRA_PKGS="linux-image-xen-amd64"
   else
-    MIRROR=file:/media/sci/
     SUITE=wheezy
-    EXTRA_ARGS="--no-check-gpg" 
   fi
 fi
 
