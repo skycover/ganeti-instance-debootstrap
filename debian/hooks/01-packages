@@ -17,10 +17,12 @@ CLEANUP=( )
 
 trap cleanup EXIT
 
-set -x
+set -e
 
-mount -o bind /media/sci $TARGET/media/cdrom
-CLEANUP+=("umount $TARGET/media/cdrom")
+if [ -e $TARGET/media/cdrom ]; then
+	mount -o bind /media/sci $TARGET/media/cdrom
+	CLEANUP+=("umount $TARGET/media/cdrom")
+fi
 
 LANG=C
 
@@ -30,6 +32,7 @@ chroot "$TARGET" apt-get update
 echo Installing packages
 chroot "$TARGET" apt-get -y --force-yes install puppet openssh-client
 chroot "$TARGET" apt-get -y --force-yes install puppet openssh-server
+chroot "$TARGET" apt-get -y --force-yes install puppet lsb-release
 
 if [ "$OS_VARIANT" = "sci" ]; then
  echo Installing packages for SCI
@@ -44,5 +47,3 @@ fi
 # execute cleanups
 cleanup
 trap - EXIT
-
-exit 0

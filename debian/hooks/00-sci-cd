@@ -2,6 +2,11 @@
 
 set -e
 
+# if domu suite to match dom0 suite, exit
+if [ "$SUITE" != `lsb_release -c|awk '{print $2}'` ]; then
+    exit 0;
+fi
+
 # Make sure we're not working on the root directory
 if [ -z "$TARGET" -o "$TARGET" = "/" ]; then
     echo "Invalid target directory '$TARGET', aborting." 1>&2
@@ -20,7 +25,7 @@ if [ "$HYPERVISOR" = "xen-pvm" ]; then
     mkdir -p "$TARGET/media/cdrom"
     # There is an issue cause we unable to use apt-cdrom during installation
     cat <<EOF >"$TARGET/etc/apt/sources.list"
-deb file:/media/cdrom/ squeeze main
+deb file:/media/cdrom/ $SUITE main
 EOF
     cat <<EOF >>"$TARGET/etc/fstab"
 /dev/xvdc /media/cdrom iso9660 noauto 0 0
