@@ -1,8 +1,8 @@
 Package: ganeti-instance-debootstrap
-Version: 0.11-1+sci1
+Version: 0.11-1+sci3
 Architecture: all
 Maintainer: Debian Ganeti Team <pkg-ganeti-devel@lists.alioth.debian.org>
-Installed-Size: 288
+Installed-Size: 180
 Depends: debootstrap, dump, kpartx, initscripts
 Enhances: ganeti
 Breaks: ganeti (<< 1.2.7)

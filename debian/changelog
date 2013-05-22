@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci3) unstable; urgency=low
+
+  * Add postinst to auto remove obsolete hook clean-root-password
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Sat, 22 May 2013 15:23:24 +0400
+
 ganeti-instance-debootstrap (0.11-1+sci2) unstable; urgency=low
 
   * Add windows os scripts (ntfs-clone based)

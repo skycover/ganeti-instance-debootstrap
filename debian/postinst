@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -e /etc/ganeti/instance-debootstrap/hooks/clear-root-password ]; then
+	rm -f /etc/ganeti/instance-debootstrap/hooks/clear-root-password
+fi
