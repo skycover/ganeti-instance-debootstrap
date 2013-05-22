@@ -1,3 +1,10 @@
+ganeti-instance-debootstrap (0.11-1+sci4) unstable; urgency=low
+
+  * Set wheezy to default suite, squeeze set as variant
+  * add EXTRA_ARGS parameter for debootstrap
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Sat, 22 May 2013 15:23:24 +0400
+
 ganeti-instance-debootstrap (0.11-1+sci3) unstable; urgency=low
 
   * Add postinst to auto remove obsolete hook clean-root-password

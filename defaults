@@ -72,6 +72,12 @@ CLEAN_CACHE="14"
 # SSDs), feel free to increase it if your media has even bigger
 # allocation blocks
 # PARTITION_ALIGNMENT=2048
+
+# EXTRA_ARGS: debootstrap extra args.
+# For example, --no-check-gpg signature if MIRROR is cdrom or other local 
+# source without signature
+# EXTRA_ARGS="--no-check-gpg" 
+
 if [ "$OS_NAME" = "ubootstrap" ]; then
   CUSTOMIZE_DIR=/etc/ganeti/instance-ubootstrap/hooks
   VARIANTS_DIR=/etc/ganeti/instance-ubootstrap/variants
@@ -80,13 +86,14 @@ if [ "$OS_NAME" = "ubootstrap" ]; then
   EXTRA_PKGS="linux-image-virtual"
 elif [ "$OS_NAME" = "debootstrap" ]; then
   ARCH=amd64
-  EXTRA_PKGS="linux-image-xen-amd64"
-  if [ "$OS_VARIANT" = "wheezy" ]; then
-    SUITE=wheezy
-    EXTRA_PKGS="linux-image-amd64"
+  EXTRA_PKGS="linux-image-amd64"
+  if [ "$OS_VARIANT" = "squeeze" ]; then
+    SUITE=squeeze
+    EXTRA_PKGS="linux-image-xen-amd64"
   else
     MIRROR=file:/media/sci/
-    SUITE=squeeze
+    SUITE=wheezy
+    EXTRA_ARGS="--no-check-gpg" 
   fi
 fi
 

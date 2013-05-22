@@ -1,12 +1,12 @@
 208e17e7d7b11b4217c98d99336ef877  usr/share/doc/ganeti-instance-debootstrap/NEWS.Debian.gz
 8b138512d25f6f0a8e6c37702036997a  usr/share/doc/ganeti-instance-debootstrap/NEWS.gz
 11a28e8407634d3352cfef6722bbf309  usr/share/doc/ganeti-instance-debootstrap/README.gz
-7c9473756460beb2f50cdace019b10f9  usr/share/doc/ganeti-instance-debootstrap/changelog.Debian.gz
+9a973cde68976e74e7ddfe8104fbf7f7  usr/share/doc/ganeti-instance-debootstrap/changelog.Debian.gz
 b127e1783af4636b5dc4d1ffc3ec8ab3  usr/share/doc/ganeti-instance-debootstrap/copyright
 f86a3d9aa1f0998327e1c28bc03f5919  usr/share/doc/ganeti-instance-debootstrap/examples/hooks/grub
 a16956a42bb89fa511923b5cbf7db1d3  usr/share/doc/ganeti-instance-debootstrap/examples/hooks/interfaces
 6e8d8f257be9dbc9a9b42b4a1481cb44  usr/share/ganeti/os/debootstrap/common.sh
-777751ee869a8c9ede74567e852a1418  usr/share/ganeti/os/debootstrap/create
+0f2d36b7b9f88588c228460dd731fa76  usr/share/ganeti/os/debootstrap/create
 9f5071845b40ae6f92f19eabeb308784  usr/share/ganeti/os/debootstrap/export
 2f5f86d0bb80f84103290cfe204b6295  usr/share/ganeti/os/debootstrap/ganeti_api_version
 5dafcaffd14753523bc97b0459e0331d  usr/share/ganeti/os/debootstrap/import
