@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci2) unstable; urgency=low
+
+  * Add windows os scripts (ntfs-clone based)
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Sat, 22 May 2013 15:23:24 +0400
+
 ganeti-instance-debootstrap (0.11-1+sci1) unstable; urgency=low
 
   * Add sci specific hooks
