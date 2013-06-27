@@ -23,4 +23,4 @@ DAEMON_OPTS=""
 EOF
 
 ## Allow plugins and facts syncing for puppet
-echo "pluginsync = true" >>$TARGET/etc/puppet/puppet.conf
+sed -i '/\[main\]/ a\pluginsync = true' $TARGET/etc/puppet/puppet.conf
