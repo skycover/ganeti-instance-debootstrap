@@ -3,3 +3,4 @@ debian/variants/* etc/ganeti/instance-debootstrap/variants/
 debian/instance-ubootstrap etc/ganeti/
 debian/ubootstrap usr/share/ganeti/os/
 debian/windows usr/share/ganeti/os/
+debian/solaris usr/share/ganeti/os/

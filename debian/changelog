@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci7) unstable; urgency=low
+
+  * Add Solaris os definition
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Sat, 22 Apr 2014 17:31:24 +0400
+
 ganeti-instance-debootstrap (0.11-1+sci6) unstable; urgency=low
 
   * Fix regression in 02-puppet
