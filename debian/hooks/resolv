@@ -11,7 +11,16 @@ if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   exit 1
 fi
 
-echo Setting up hosts
+echo Setting up hosts and hostname
+
+hostname=`echo $INSTANCE_NAME|cut -d. -f1`
+# set fqnd from resolv conf if INSTANCE_NAME don't contain it.
+if (echo $INSTANCE_NAME|grep -q "\.") then
+    fqdn="$INSTANCE_NAME"
+else
+    domain=`grep search /etc/resolv.conf|cut -d' ' -f2`
+    fqdn="$INSTANCE_NAME.$domain"
+fi 
 
 cat <<EOF >"$TARGET/etc/hosts"
 127.0.0.1       localhost
@@ -24,8 +33,10 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ff02::3 ip6-allhosts
 
-127.0.1.1  $INSTANCE_NAME `echo $INSTANCE_NAME|cut -d. -f1`
+127.0.1.1 $fqdn $hostname
 EOF
+
+echo $hostname > "$TARGET/etc/hostname"
 
 . /etc/sci/sci.conf
 
