@@ -41,7 +41,11 @@ else
   exit 1
 fi
 
-( /usr/sbin/ntfsclone --restore-image --overwrite $filesystem_dev - )
+fs_devs=$(enum_disks $blockdev)
+# XXX not counting disk type
+for fs_dev in $fs_devs; do
+  ( /sbin/ntfsclone --restore-image --overwrite $fs_dev - )
+done
 
 # execute cleanups
 cleanup

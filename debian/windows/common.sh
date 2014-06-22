@@ -138,7 +138,8 @@ map_disk0() {
                        awk '{print $1}'`
   if [ -z "$filesystem_dev_base" ]; then
     log_error "Cannot interpret kpartx output and get partition mapping"
-    exit 1
+    echo skip
+    return
   fi
   kpartx -a -p- $blockdev > /dev/null
   filesystem_dev="/dev/mapper/$filesystem_dev_base"
@@ -147,6 +148,20 @@ map_disk0() {
     exit 1
   fi
   echo "$filesystem_dev"
+}
+
+enum_disks() {
+  blockdev="$1"
+  for filesystem_dev_base in `kpartx -l -p- $blockdev | \
+                       grep -- "-[234].*$blockdev" | \
+                       awk '{print $1}'`; do
+    filesystem_dev="/dev/mapper/$filesystem_dev_base"
+    if [ ! -b "$filesystem_dev" ]; then
+      log_error "Can't find kpartx mapped partition: $filesystem_dev"
+      exit 1
+    fi
+    echo "$filesystem_dev"
+  done
 }
 
 unmap_disk0() {

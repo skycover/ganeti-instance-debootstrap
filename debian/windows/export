@@ -18,6 +18,7 @@
 # 02110-1301, USA.
 
 set -e
+set -x
 . common.sh
 
 # If the target device is not a real block device we'll first losetup it.
@@ -32,6 +33,11 @@ if [ "$PARTITION_STYLE" = "none" ]; then
   filesystem_dev=$blockdev
 elif [ "$PARTITION_STYLE" = "msdos" ]; then
   filesystem_dev=$(map_disk0 $blockdev)
+  if [ "$filesystem_dev" = "skip" ]; then
+    echo Skipping device $blockdev
+    exit 0
+  fi
+  fs_devs=$(enum_disks $blockdev)
   CLEANUP+=("unmap_disk0 $blockdev")
 else
   echo "Unknown partition style $PARTITION_STYLE"
@@ -39,10 +45,19 @@ else
 fi
 
 vol_type=$($VOL_TYPE $filesystem_dev)
-
 if [ "$vol_type" = "ntfs" ]; then
   save_part_disk0 $blockdev
-  /usr/sbin/ntfsclone --save-image --output - $filesystem_dev
+
+  for fs_dev in $fs_devs; do
+
+    vol_type=$($VOL_TYPE $fs_dev)
+
+    if [ "$vol_type" = "ntfs" ]; then
+      /sbin/ntfsclone --save-image --output - $fs_dev
+    fi
+
+  done
+
 fi
 
 # execute cleanups
