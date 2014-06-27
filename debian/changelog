@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci9) unstable; urgency=low
+
+  * Fix 00-sci-cd hook /etc/fstab conflict
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Fri, 27 Jun 2014 16:29:24 +0400
+
 ganeti-instance-debootstrap (0.11-1+sci8) unstable; urgency=low
 
   * Fix windows import/export

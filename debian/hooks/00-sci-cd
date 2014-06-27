@@ -28,7 +28,7 @@ if [ "$HYPERVISOR" = "xen-pvm" ]; then
 deb file:/media/cdrom/ $SUITE main
 EOF
     cat <<EOF >>"$TARGET/etc/fstab"
-/dev/xvdc /media/cdrom iso9660 noauto 0 0
+/dev/hdx /media/cdrom iso9660 noauto 0 0
 EOF
 fi
 
