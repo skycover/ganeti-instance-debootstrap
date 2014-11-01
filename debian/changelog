@@ -1,3 +1,10 @@
+ganeti-instance-debootstrap (0.11-1+sci10) unstable; urgency=low
+
+  * add ubuntu 14.04 support
+  * fix debian squeeze variant
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Fri, 29 Oct 2014 14:23:24 +0300
+
 ganeti-instance-debootstrap (0.11-1+sci9) unstable; urgency=low
 
   * Fix 00-sci-cd hook /etc/fstab conflict

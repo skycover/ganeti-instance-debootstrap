@@ -82,7 +82,11 @@ if [ "$OS_NAME" = "ubootstrap" ]; then
   CUSTOMIZE_DIR=/etc/ganeti/instance-ubootstrap/hooks
   VARIANTS_DIR=/etc/ganeti/instance-ubootstrap/variants
   MIRROR=http://us.archive.ubuntu.com/ubuntu/
-  SUITE=precise
+  if [ "$OS_VARIANT" = "precise" ]; then
+    SUITE=precise
+  else
+    SUITE=trusty
+  fi
   EXTRA_PKGS="linux-image-virtual"
 elif [ "$OS_NAME" = "debootstrap" ]; then
   ARCH=amd64
