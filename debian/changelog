@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci11) unstable; urgency=low
+
+  * add system console setting in grub for ubuntu
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Fri, 25 Nov 2014 00:06:24 +0300
+
 ganeti-instance-debootstrap (0.11-1+sci10) unstable; urgency=low
 
   * add ubuntu 14.04 support
