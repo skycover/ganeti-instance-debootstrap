@@ -2,6 +2,12 @@
 
 set -e
 
+# if sci-cd is absent or empty, exit
+if !(ls -A /media/sci) then
+    exit 0;
+fi
+
+
 # if domu suite to match dom0 suite, exit
 if [ "$SUITE" != `lsb_release -c|awk '{print $2}'` ]; then
     exit 0;
