@@ -11,7 +11,7 @@ Vcs-Git: git://git.debian.org/pkg-ganeti/instance-debootstrap.git
 
 Package: ganeti-instance-debootstrap
 Architecture: all
-Depends: ${misc:Depends}, debootstrap, dump, kpartx, initscripts
+Depends: ${misc:Depends}, debootstrap, dump, kpartx, initscripts, yum
 Breaks: ganeti (<< 1.2.7)
 Enhances: ganeti
 Description: debootstrap-based instance OS definition for ganeti

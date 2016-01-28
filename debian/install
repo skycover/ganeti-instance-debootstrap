@@ -1,6 +1,8 @@
 debian/hooks/* etc/ganeti/instance-debootstrap/hooks/
 debian/variants/* etc/ganeti/instance-debootstrap/variants/
 debian/instance-ubootstrap etc/ganeti/
+debian/instance-yumbootstrap etc/ganeti/
 debian/ubootstrap usr/share/ganeti/os/
+debian/yumbootstrap usr/share/ganeti/os/
 debian/windows usr/share/ganeti/os/
 debian/solaris usr/share/ganeti/os/

@@ -1,3 +1,9 @@
+ganeti-instance-debootstrap (0.11-1+sci13) unstable; urgency=low
+
+  * add CentOS 7 support (yumbootstrap)
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Fri, 03 Mar 2015 20:21:24 +0300
+
 ganeti-instance-debootstrap (0.11-1+sci12) unstable; urgency=low
 
   * add /media/sci existance check for 00-sci-cd
