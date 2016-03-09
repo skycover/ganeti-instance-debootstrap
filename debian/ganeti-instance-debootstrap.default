@@ -92,6 +92,7 @@ elif [ "$OS_NAME" = "debootstrap" ]; then
   ARCH=amd64
   EXTRA_PKGS="linux-image-amd64"
   if [ "$OS_VARIANT" = "squeeze" ]; then
+	MIRROR=http://archive.debian.org/debian/
     SUITE=squeeze
     EXTRA_PKGS="linux-image-xen-amd64"
   else
