@@ -142,7 +142,7 @@ fi
 # will use it, this declaration is to make sure the variable is set
 : ${MIRROR:=""}
 : ${PROXY:=""}
-: ${SUITE:="squeeze"}
+: ${SUITE:="centos7"}
 : ${ARCH:=""}
 : ${EXTRA_PKGS:=""}
 : ${CUSTOMIZE_DIR:="/etc/ganeti/instance-yumbootstrap/hooks"}

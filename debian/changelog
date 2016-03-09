@@ -1,6 +1,7 @@
 ganeti-instance-debootstrap (0.11-1+sci14) unstable; urgency=low
 
   * fix squeeze deboostrap mirror (archive)
+  * fix cache file name for centos
 
  -- Vladimir Ipatov <vs@ipatov.net>  Wed, 09 Mar 2016 19:13:24 +0300
 
