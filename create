@@ -48,7 +48,7 @@ else
   exit 1
 fi
 
-mke2fs -Fjq $filesystem_dev
+mkfs.ext4 -Fjq $filesystem_dev
 root_uuid=$($VOL_ID $filesystem_dev )
 
 if [ -n "$swapdev" ]; then
@@ -110,7 +110,7 @@ cat > $TMPDIR/etc/fstab <<EOF
 # /etc/fstab: static file system information.
 #
 # <file system>   <mount point>   <type>  <options>       <dump>  <pass>
-UUID=$root_uuid   /               ext3    defaults        0       1
+UUID=$root_uuid   /               ext4    defaults        0       1
 proc              /proc           proc    defaults        0       0
 EOF
 
