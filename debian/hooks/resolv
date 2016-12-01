@@ -4,7 +4,11 @@
 
 set -e
 
-test "$OS_VARIANT" = "sci" && exit 0
+if [[ "$OS_VARIANT" == "sci" ]]; then
+	grep ^search /etc/resolv.conf >"$TARGET/etc/resolv.conf"
+	echo "nameserver 127.0.0.1" >>"$TARGET/etc/resolv.conf"
+	exit 0
+fi
 
 if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   echo "Missing target directory"

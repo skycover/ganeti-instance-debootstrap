@@ -6,3 +6,4 @@ debian/ubootstrap usr/share/ganeti/os/
 debian/yumbootstrap usr/share/ganeti/os/
 debian/windows usr/share/ganeti/os/
 debian/solaris usr/share/ganeti/os/
+debian/base.repo etc/yum/repos.d

@@ -1,3 +1,11 @@
+ganeti-instance-debootstrap (0.11-1+sci16) unstable; urgency=low
+
+  * add yum repos file for centos 7
+  * add ssh authorized_keys copy for sci
+  * fix resolv.conf for sci
+
+ -- Vladimir Ipatov <vs@ipatov.net>  Wed, 25 Oct 2016 19:13:24 +0300
+
 ganeti-instance-debootstrap (0.11-1+sci15) unstable; urgency=low
 
   * add jessie support
