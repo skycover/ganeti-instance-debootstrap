@@ -21,12 +21,14 @@ set -x
 
 LANG=C
 
+echo Add universe to sources.list
+sed -i 's/main$/main universe/' $TARGET/etc/apt/sources.list
+
 echo Updating package sources
 chroot "$TARGET" apt-get update
 
 echo Installing packages
-chroot "$TARGET" apt-get -y --force-yes install puppet openssh-client
-chroot "$TARGET" apt-get -y --force-yes install puppet openssh-server
+chroot "$TARGET" apt-get -y --force-yes install puppet openssh-client openssh-server
 
 # execute cleanups
 cleanup

@@ -85,6 +85,7 @@ else
    # --arch "$DPKG_ARCH" \
     #$INCLUDE \
     #"$SUITE" $TMPDIR $MIRROR
+	 set +e
      yum -y --installroot $TMPDIR groupinstall "Base"
      yum -y --nogpgcheck --installroot $TMPDIR install kernel
      yum -y --nogpgcheck --installroot $TMPDIR install openssh-server

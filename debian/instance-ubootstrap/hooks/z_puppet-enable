@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Enable puppet for 12.04 and 14.04 installs
+# Enable puppet for 12.04 and 14.04, 16.04 installs
 
 set -e
 
@@ -27,6 +27,7 @@ EOF
 else
         echo Enabling puppet agent
         chroot "$TARGET" /usr/bin/puppet agent --enable
+        set +e
         chroot "$TARGET" /bin/kill -9 `cat $TARGET/run/puppet/agent.pid`
 fi
 

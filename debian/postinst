@@ -3,3 +3,19 @@
 if [ -e /etc/ganeti/instance-debootstrap/hooks/clear-root-password ]; then
 	rm -f /etc/ganeti/instance-debootstrap/hooks/clear-root-password
 fi
+
+if [ -e /etc/ganeti/instance-ubootstrap/hooks/ubuntu-sources-list ]; then
+	rm -f /etc/ganeti/instance-ubootstrap/hooks/ubuntu-sources-list
+fi
+
+if [ ! -e /usr/share/debootstrap/scripts/stretch ]; then
+	ln -s /usr/share/debootstrap/scripts/sid /usr/share/debootstrap/scripts/stretch 
+fi
+
+if [ ! -e /usr/share/debootstrap/scripts/trusty ]; then
+	ln -s /usr/share/debootstrap/scripts/gutsy /usr/share/debootstrap/scripts/trusty
+fi
+
+if [ ! -e /usr/share/debootstrap/scripts/xenial ]; then
+	ln -s /usr/share/debootstrap/scripts/gutsy /usr/share/debootstrap/scripts/xenial
+fi

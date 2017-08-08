@@ -12,7 +12,7 @@ if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   exit 1
 fi
 
-test "$OS_VARIANT" = "jessie" || exit 0
+test "$OS_VARIANT" = "jessie" -o "$OS_VARIANT" = "stretch"||exit 0
 
 echo removing systemd
 

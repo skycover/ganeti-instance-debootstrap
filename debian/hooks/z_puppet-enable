@@ -9,10 +9,11 @@ if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   exit 1
 fi
 
-if [ "$OS_VARIANT" = "jessie" ]; then
+if [ "$OS_VARIANT" = "jessie" -o "$OS_VARIANT" = "stretch" ]; then
         echo Enabling puppet agent
         chroot "$TARGET" /usr/bin/puppet agent --enable
         echo Killing puppet agent
+        set +e
         chroot "$TARGET" /bin/kill -9 `cat $TARGET/run/puppet/agent.pid`
 fi
 

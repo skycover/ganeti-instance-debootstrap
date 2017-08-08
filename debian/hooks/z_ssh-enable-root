@@ -9,7 +9,7 @@ if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   exit 1
 fi
 
-test "$OS_VARIANT" = "jessie" || exit 0
+test "$OS_VARIANT" = "jessie" -o "$OS_VARIANT" = "stretch"||exit 0
 
 echo set ssh PermitRootLogin yes
 sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' $TARGET/etc/ssh/sshd_config
