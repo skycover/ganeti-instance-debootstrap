@@ -2,17 +2,17 @@
 #
 # Enable root ssh access with password for 14.04 installs
 
-set -e
+echo "Starting hook z-ssh-enable-root: Enable root ssh access with password"
 
 if [ -z "$TARGET" -o ! -d "$TARGET" ]; then
   echo "Missing target directory"
   exit 1
 fi
 
-test "$OS_VARIANT" = "jessie" -o "$OS_VARIANT" = "stretch"||exit 0
+test "$OS_VARIANT" = "wheezy" -o "$OS_VARIANT" = "squeeze" && exit 0
 
 echo set ssh PermitRootLogin yes
 sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' $TARGET/etc/ssh/sshd_config
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' $TARGET/etc/ssh/sshd_config
 
-exit 0
-
+echo "Finishing hook z-ssh-enable-root"
